@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block body %}
+
+
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+      <dl>
+        <dt>GATEID:
+        <dd><input type="text" size="30" name="GATEID">
+        <dt>CARID:
+        <dd><input type="text" size="30" name="CARID">
+        <dt>Data:
+        <dd><textarea name="DATA" rows="5" cols="40"></textarea>
+        <dt>Status
+        <dd><input type="text" size="10" name="STATE">
+        <dd><input type="submit" value="Submit">
+      </dl>
+    </form>
+  {% endif %}
+
+
+
+  <ul class="entries">
+  {% for entry in entries %}
+    <li><h2>GATEID:{{ entry.GATEID }}</h2>
+    <h2>CARID:{{ entry.CARID }}</h2>
+		<h2>Data:{{ entry.DATA|safe }}</h2>
+		<h2>State:{{ entry.STATE }}</h2>
+
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+
+{% endblock %}
