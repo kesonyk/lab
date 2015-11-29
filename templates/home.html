@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../static/favicon.ico">
 
-    <title>Theme Template for Bootstrap</title>
+    <title>物资管理平台中心</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +35,8 @@
   </head>
 
   <body>
+
+
     <div class="container">
       <!-- Static navbar -->
       <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -73,32 +75,18 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-      
-      <h1>物资显示</h1>
-      <div class="entries">
-        <div class="col-md-12">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>门</th>
-              <th>车</th>
-              <th>数据</th>
-              <th>状态</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for entry in entries %}
-            <tr>
-              <td>{{entry.GATEID}}</td>
-              <td>{{entry.CARID}}</td>
-              <td>{{entry.DATA|safe}}</td>
-              <td>{{entry.STATE}}</td>
-            </tr>
-          {% endfor %}
-          </tbody>
-        </table>
-        </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../templates/components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
       </div>
+
+    </div> <!-- /container -->
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -109,6 +97,4 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../static/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-
-
-
+</html>

@@ -25,9 +25,8 @@ app.config.update(dict(
 ))
 
 manager=Manager(app)
-bootstrap=Bootstrap(app)
 moment=Moment(app)
-
+bootstrap=Bootstrap(app)
 
 
 
@@ -55,18 +54,29 @@ def login():
 		else:
 			session['logged_in']=True
 			flash('You were logged in')
-			return redirect(url_for('show_entries'))
+			return redirect(url_for('home'))
 	return render_template('login.html',error=error)
+
 
 @app.route('/logout')
 def logout():
 	session.pop('logged_in',None)
 	flash('You were logged out')
-	return redirect(url_for('show_entries'))
-
+	return redirect(url_for('index'))
 
 
 @app.route('/')
+def index():
+	if session.get('logged_in'):
+		return redirect(url_for('home'))
+	else:
+		return render_template('cover.html')
+
+@app.route('/home')
+def home():
+	return render_template('home.html')
+
+@app.route('/show')
 def show_entries():
 	db=get_db()
 	cur=db.execute('select GATEID,CARID,DATA,STATE from DATABASE where STATE=1')
@@ -74,17 +84,29 @@ def show_entries():
 	return render_template('show_entries.html',entries=entries)
 
 
-@app.route('/add',methods=['POST'])
+
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
+
+
+
+
+@app.route('/add',methods=['GET','POST'])
 def add_entry():
-	if not session.get('logged_in'):
-		abort(401)
-	db=get_db()
-	db.execute('insert into DATABASE (GATEID,CARID,DATA,STATE) values (?,?,?,?)',
-				[request.form['GATEID'],request.form['CARID'],request.form['DATA'],
-				 request.form['STATE']])
-	db.commit()
-	flash('New entry was successfully posted')
-	return redirect(url_for('show_entries'))
+	if request.method=='POST':
+		if not session.get('logged_in'):
+			abort(401)
+		db=get_db()
+		db.execute('insert into DATABASE (GATEID,CARID,DATA,STATE) values (?,?,"",?)',
+					[request.form['GATEID'],request.form['CARID'],request.form['STATE']])
+		db.commit()
+		flash('New entry was successfully posted')
+		return redirect(url_for('show_entries'))
+	return render_template('add.html')
+
 
 if __name__=='__main__':
 	manager.run()

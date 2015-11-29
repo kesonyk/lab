@@ -7,21 +7,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../static/favicon.ico">
 
-    <title>Theme Template for Bootstrap</title>
+    <title></title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
-
-      <!-- Bootstrap theme -->
-    <link href="../static/dist/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../static/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../static/navbar.css" rel="stylesheet">
+    <link href="../static/add.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -35,8 +32,8 @@
   </head>
 
   <body>
+    
     <div class="container">
-      <!-- Static navbar -->
       <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
           <div class="navbar-header">
@@ -73,42 +70,27 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-      
-      <h1>物资显示</h1>
-      <div class="entries">
-        <div class="col-md-12">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>门</th>
-              <th>车</th>
-              <th>数据</th>
-              <th>状态</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for entry in entries %}
-            <tr>
-              <td>{{entry.GATEID}}</td>
-              <td>{{entry.CARID}}</td>
-              <td>{{entry.DATA|safe}}</td>
-              <td>{{entry.STATE}}</td>
-            </tr>
-          {% endfor %}
-          </tbody>
-        </table>
-        </div>
-      </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../static/dist/js/bootstrap.min.js"></script>
+      {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+      <form action="{{ url_for('add_entry') }}" method="post" class="form-signin">
+        <h1 class="form-signin-heading">增加合法车辆编号</h1>
+        <h3 class="form-signin-heading">请选择门和车辆</h3>
+        <dt>GateId
+        <label for="GATEID" class="sr-only">GATEID</label>
+        <input type="text" name="GATEID" class="form-control" placeholder="GateId" required autofocus>
+        <dt>CarId
+        <label for="CARID" class="sr-only">CARID</label>
+        <input type="text" name="CARID" class="form-control" placeholder="CarId" required>
+        <dt>Status
+        <label for="STATE" class="sr-only">STATE</label>
+        <input type="text" name="STATE" class="form-control" placeholder="Status" required>
+      </br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+    </div> <!-- /container -->
+
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../static/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-
-
-
+</html>
