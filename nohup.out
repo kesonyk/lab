@@ -1,0 +1,348 @@
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 856-167-543
+114.255.40.28 - - [29/Nov/2015 18:52:03] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [29/Nov/2015 18:52:12] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [29/Nov/2015 18:52:15] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [29/Nov/2015 18:52:17] "GET /home HTTP/1.1" 200 -
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 856-167-543
+114.255.40.28 - - [29/Nov/2015 18:54:07] "GET /home HTTP/1.1" 200 -
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 856-167-543
+114.255.40.28 - - [29/Nov/2015 18:54:36] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [29/Nov/2015 18:54:47] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [29/Nov/2015 18:57:09] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [29/Nov/2015 19:01:12] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:32] "GET / HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:32] "GET /static/dist/css/bootstrap.min.css HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:32] "GET /static/assets/css/ie10-viewport-bug-workaround.css HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:32] "GET /static/cover.css HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:32] "GET /static/assets/js/ie-emulation-modes-warning.js HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:32] "GET /static/assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:32] "GET /static/dist/js/bootstrap.min.js HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:33] "GET /static/favicon.ico HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:33] "GET /static/images/cover.jpg HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:35] "GET /login HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:35] "GET /static/signin.css HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:35] "GET /static/a.jpg HTTP/1.1" 404 -
+114.255.40.52 - - [29/Nov/2015 19:01:45] "POST /login HTTP/1.1" 302 -
+114.255.40.52 - - [29/Nov/2015 19:01:45] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:45] "GET /static/dist/css/bootstrap-theme.min.css HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:01:45] "GET /static/navbar.css HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:17] "GET /show HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:17] "GET /favicon.ico HTTP/1.1" 404 -
+114.255.40.52 - - [29/Nov/2015 19:02:22] "GET /show HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:24] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:24] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:26] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:27] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:27] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:02:29] "GET /logout HTTP/1.1" 302 -
+114.255.40.52 - - [29/Nov/2015 19:02:29] "GET / HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:03:55] "GET /login HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:03:55] "GET /static/a.jpg HTTP/1.1" 404 -
+114.255.40.52 - - [29/Nov/2015 19:04:27] "POST /login HTTP/1.1" 200 -
+114.255.40.52 - - [29/Nov/2015 19:04:33] "GET /static/a.jpg HTTP/1.1" 404 -
+114.255.40.52 - - [29/Nov/2015 19:04:41] "POST /login HTTP/1.1" 302 -
+114.255.40.52 - - [29/Nov/2015 19:04:41] "GET /home HTTP/1.1" 200 -
+121.42.0.16 - - [29/Nov/2015 20:54:00] "GET / HTTP/1.1" 200 -
+121.42.0.16 - - [29/Nov/2015 23:54:10] "GET / HTTP/1.1" 200 -
+121.42.0.15 - - [30/Nov/2015 02:56:01] "GET / HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 217, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 251, in handle_one_request
+    elif self.parse_request():
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 364, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 273, in log_error
+    self.log('error', *args)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 279, in log
+    _log(type, '%s - - [%s] %s\n' % (self.address_string(),
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 267, in address_string
+    return self.environ['REMOTE_ADDR']
+AttributeError: 'WSGIRequestHandler' object has no attribute 'environ'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 217, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 251, in handle_one_request
+    elif self.parse_request():
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 364, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 273, in log_error
+    self.log('error', *args)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 279, in log
+    _log(type, '%s - - [%s] %s\n' % (self.address_string(),
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 267, in address_string
+    return self.environ['REMOTE_ADDR']
+AttributeError: 'WSGIRequestHandler' object has no attribute 'environ'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 217, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 251, in handle_one_request
+    elif self.parse_request():
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 364, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 273, in log_error
+    self.log('error', *args)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 279, in log
+    _log(type, '%s - - [%s] %s\n' % (self.address_string(),
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 267, in address_string
+    return self.environ['REMOTE_ADDR']
+AttributeError: 'WSGIRequestHandler' object has no attribute 'environ'
+121.42.0.19 - - [30/Nov/2015 05:53:38] "GET / HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 09:04:37] "GET /about HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 09:04:37] "GET /static/dist/css/bootstrap.min.css HTTP/1.1" 304 -
+114.255.40.52 - - [30/Nov/2015 09:04:37] "GET /static/dist/css/round-about.css HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 09:04:37] "GET /static/dist/js/jquery.js HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 09:04:37] "GET /static/dist/js/bootstrap.min.js HTTP/1.1" 304 -
+114.255.40.52 - - [30/Nov/2015 09:04:43] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 09:04:43] "GET /static/dist/css/bootstrap-theme.min.css HTTP/1.1" 304 -
+114.255.40.52 - - [30/Nov/2015 09:04:43] "GET /static/assets/css/ie10-viewport-bug-workaround.css HTTP/1.1" 304 -
+114.255.40.52 - - [30/Nov/2015 09:04:43] "GET /static/navbar.css HTTP/1.1" 304 -
+114.255.40.52 - - [30/Nov/2015 09:04:43] "GET /static/assets/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+114.255.40.52 - - [30/Nov/2015 09:04:43] "GET /static/assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+114.255.40.52 - - [30/Nov/2015 09:04:44] "GET /show HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 09:07:06] "GET /home HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 09:07:17] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /static/dist/css/bootstrap.min.css HTTP/1.1" 304 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /static/assets/css/ie10-viewport-bug-workaround.css HTTP/1.1" 304 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /static/dist/css/bootstrap-theme.min.css HTTP/1.1" 304 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /static/assets/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /static/navbar.css HTTP/1.1" 304 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /static/dist/js/bootstrap.min.js HTTP/1.1" 304 -
+114.255.40.28 - - [30/Nov/2015 09:29:03] "GET /static/assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+114.255.40.28 - - [30/Nov/2015 09:29:06] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:07] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:09] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:09] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:11] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:11] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:12] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:13] "GET /home HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 09:29:15] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:06:31] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:34:26] "GET /show HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/lab/webServer.py", line 82, in show_entries
+    cur=db.execute('select GATEID,CARID,DATA,STATE from DATABASE where STATE=1')
+OperationalError: no such table: DATABASE
+114.255.40.28 - - [30/Nov/2015 10:34:26] "GET /show?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:34:26] "GET /show?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:34:26] "GET /show?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:34:27] "GET /show?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:34:27] "GET /show?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:34:27] "GET /show?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:34:37] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:35:41] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:35:42] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:35:43] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:35:44] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:50:53] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:50:59] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:51:04] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:51:29] "GET /static/dist/css/bootstrap.min.css.map HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:51:29] "GET /static/dist/css/bootstrap-theme.min.css.map HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:51:44] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:51:53] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:53:04] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:53:51] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:54:24] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:54:43] "GET /show HTTP/1.1" 200 -
+114.255.40.28 - - [30/Nov/2015 10:56:36] "GET /show HTTP/1.1" 200 -
+114.255.40.52 - - [30/Nov/2015 10:56:49] "GET /show HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:48] "GET / HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:48] "GET /static/dist/css/bootstrap.min.css HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:49] "GET /static/assets/js/ie-emulation-modes-warning.js HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:49] "GET /static/assets/css/ie10-viewport-bug-workaround.css HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:49] "GET /static/cover.css HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:49] "GET /static/dist/js/bootstrap.min.js HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:49] "GET /static/assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:50] "GET /static/images/cover.jpg HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:53] "GET /login HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:53] "GET /static/signin.css HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:45:53] "GET /static/a.jpg HTTP/1.1" 404 -
+61.135.169.78 - - [30/Nov/2015 12:45:53] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:46:01] "POST /login HTTP/1.1" 302 -
+61.135.169.78 - - [30/Nov/2015 12:46:01] "GET /home HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:46:01] "GET /static/navbar.css HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:46:01] "GET /static/dist/css/bootstrap-theme.min.css HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:46:06] "GET /show HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:46:09] "GET /assets/js/vendor/jquery.min.js HTTP/1.1" 404 -
+61.135.169.78 - - [30/Nov/2015 12:46:09] "GET /favicon.ico HTTP/1.1" 404 -
+61.135.169.78 - - [30/Nov/2015 12:46:14] "GET /home HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:46:22] "GET /assets/js/vendor/jquery.min.js HTTP/1.1" 404 -
+61.135.169.78 - - [30/Nov/2015 12:50:20] "GET /show HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:51:22] "GET /logout HTTP/1.1" 302 -
+61.135.169.78 - - [30/Nov/2015 12:51:22] "GET / HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:51:27] "GET /login HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:51:32] "GET /login HTTP/1.1" 200 -
+61.135.169.78 - - [30/Nov/2015 12:51:36] "GET /login HTTP/1.1" 200 -
+111.206.36.136 - - [30/Nov/2015 12:58:05] "GET /login HTTP/1.1" 200 -
+61.135.165.8 - - [30/Nov/2015 12:58:05] "GET //static/assets/js/ie-emulation-modes-warning.js HTTP/1.1" 404 -
+121.42.0.14 - - [30/Nov/2015 19:14:02] "GET / HTTP/1.1" 200 -
+121.42.0.31 - - [30/Nov/2015 22:58:32] "GET / HTTP/1.1" 200 -
+121.42.0.17 - - [01/Dec/2015 01:59:12] "GET / HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 217, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 251, in handle_one_request
+    elif self.parse_request():
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 364, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 273, in log_error
+    self.log('error', *args)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 279, in log
+    _log(type, '%s - - [%s] %s\n' % (self.address_string(),
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 267, in address_string
+    return self.environ['REMOTE_ADDR']
+AttributeError: 'WSGIRequestHandler' object has no attribute 'environ'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 217, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 251, in handle_one_request
+    elif self.parse_request():
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 364, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 273, in log_error
+    self.log('error', *args)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 279, in log
+    _log(type, '%s - - [%s] %s\n' % (self.address_string(),
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 267, in address_string
+    return self.environ['REMOTE_ADDR']
+AttributeError: 'WSGIRequestHandler' object has no attribute 'environ'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 217, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 251, in handle_one_request
+    elif self.parse_request():
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 364, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 273, in log_error
+    self.log('error', *args)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 279, in log
+    _log(type, '%s - - [%s] %s\n' % (self.address_string(),
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 267, in address_string
+    return self.environ['REMOTE_ADDR']
+AttributeError: 'WSGIRequestHandler' object has no attribute 'environ'
+121.42.0.30 - - [01/Dec/2015 04:57:25] "GET / HTTP/1.1" 200 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /show HTTP/1.1" 200 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /static/dist/css/bootstrap.min.css HTTP/1.1" 304 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /static/dist/css/bootstrap-theme.min.css HTTP/1.1" 304 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /static/assets/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /static/assets/css/ie10-viewport-bug-workaround.css HTTP/1.1" 304 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /static/navbar.css HTTP/1.1" 304 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /static/dist/js/bootstrap.min.js HTTP/1.1" 304 -
+114.255.40.61 - - [01/Dec/2015 09:58:35] "GET /static/assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+114.255.40.61 - - [01/Dec/2015 10:56:32] "GET /show HTTP/1.1" 200 -
+114.255.40.61 - - [01/Dec/2015 10:56:34] "GET /show HTTP/1.1" 200 -
+----------------------------------------
+Exception happened during processing of request from ('121.42.0.19', 9584)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.42.0.19', 9586)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.42.0.19', 10645)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.42.0.15', 50265)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.42.0.15', 50268)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.42.0.15', 50951)
+----------------------------------------

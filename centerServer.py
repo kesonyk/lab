@@ -4,7 +4,7 @@ import sqlite3
 
 
 conn=sqlite3.connect('center.db')
-
+conn.text_factory=str
 """
  RPC Server Operation
 """
@@ -19,8 +19,9 @@ class CenterRPC(object):
 					  STATE  INT   NOT NULL)''')
 		print "Table created successfully"
 
+		
 		conn.execute("INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
-			VALUES ('01','00000001','',0)")
+			VALUES ('01','fffffffe','',0)")
 
 
 		cursor=conn.execute("SELECT * from DATABASE")
@@ -32,6 +33,7 @@ class CenterRPC(object):
 	def dataSelect(self,gateId):
 		sql="SELECT * from DATABASE WHERE GATEID="+"gateId"
 		print sql
+
 		cursor=conn.execute(sql)
 		ret=[]
 		for row in cursor:
@@ -41,8 +43,10 @@ class CenterRPC(object):
 	
 	
 	def carConfirm(self,carId):
+		
 		cursor=conn.execute("SELECT carId from DATABASE")
 		for row in cursor:
+			print carId,row
 			if carId in row:
 				print "confirmed!"
 				return True
@@ -51,6 +55,7 @@ class CenterRPC(object):
 				return False
 
 	def dataUpload(self,gateId,carId,data):
+		
 		conn.execute("INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
 			VALUES ('%s','%s','%s',1)"%(gateId,carId,data))
 		conn.commit()
