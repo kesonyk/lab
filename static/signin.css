@@ -3,9 +3,8 @@ body {
   padding-bottom: 40px;
   background-color: #eee;
   width: 100%;
-  background:url("a.jpg");
+  background:url("./images/login.jpg");
   background-size: cover;
- 
 }
 
 

@@ -84,6 +84,22 @@ def show_entries():
 	return render_template('show_entries.html',entries=entries)
 
 
+@app.route('/show_legal')
+def show_legal():
+	db=get_db()
+	cur=db.execute('select GATEID,CARID,DATA,STATE from DATABASE where STATE=1')
+	entries=cur.fetchall()
+	return render_template('show_legal.html',entries=entries)
+
+@app.route('/show_illegal')
+def show_illegal():
+	db=get_db()
+	cur=db.execute('select GATEID,CARID,DATA,STATE from DATABASE where STATE=0')
+	entries=cur.fetchall()
+	return render_template('show_illegal.html',entries=entries)
+
+
+
 
 
 @app.route('/about')

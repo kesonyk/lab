@@ -5,13 +5,21 @@ import sqlite3
 
 conn=sqlite3.connect('center.db')
 conn.text_factory=str
+
 """
  RPC Server Operation
 """
 class CenterRPC(object):
 
 	def __init__(self):
-		#self.conn=sqlite3.connect('center.db')
+
+		#create the Permission Tab
+		conn.execute('''CREATE TABLE PERMISSION
+					( GATEID TEXT  NOT NULL,
+					  CARID  TEXT  NOT NULL,
+					  CARSRC   TEXT  NOT NULL)''')
+		print "Permission Table created successfully"
+
 		conn.execute('''CREATE TABLE DATABASE
 					( GATEID TEXT  NOT NULL,
 					  CARID  TEXT  NOT NULL,
@@ -21,8 +29,13 @@ class CenterRPC(object):
 
 		
 		conn.execute("INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
-			VALUES ('01','fffffffe','',0)")
+			VALUES ('01','fffffffffffffff1','',0)")
 
+
+		cursor=conn.execute("SELECT * from PERMISSION")
+		for row in cursor:
+			print type(row)
+			print row
 
 		cursor=conn.execute("SELECT * from DATABASE")
 		for row in cursor:
@@ -42,12 +55,12 @@ class CenterRPC(object):
 		return ret
 	
 	
-	def carConfirm(self,carId):
+	def carConfirm(self,gateId,carId):
 		
-		cursor=conn.execute("SELECT carId from DATABASE")
+		cursor=conn.execute("SELECT GATEID,CARSRC from PERMISSION")
 		for row in cursor:
 			print carId,row
-			if carId in row:
+			if gateId==row[0] and carId==row[1]:
 				print "confirmed!"
 				return True
 			else:
@@ -56,8 +69,8 @@ class CenterRPC(object):
 
 	def dataUpload(self,gateId,carId,data):
 		
-		conn.execute("INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
-			VALUES ('%s','%s','%s',1)"%(gateId,carId,data))
+		conn.execute("""INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
+			VALUES (?,?,?,1);""",(gateId,carId,data))
 		conn.commit()
 		
 

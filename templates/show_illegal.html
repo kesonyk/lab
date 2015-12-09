@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>非法车辆显示</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>门</th>
+          <th>车</th>
+          <th>数据</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for entry in entries %}
+        <tr>
+          <td>{{entry.GATEID}}</td>
+          <td>{{entry.CARID}}</td>
+          <td>{{entry.DATA|safe}}</td>
+          <td>{{entry.STATE}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+{% endblock %}
