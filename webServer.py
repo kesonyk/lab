@@ -113,12 +113,13 @@ def set_dist():
 		if not session.get('logged_in'):
 			abort(401)
 		db=get_db()
-		db.execute("UPDATE DISTTAB SET GATEID=?,DIST=?",
-					(request.form['GATEID'],request.form['DIST']))
+		db.execute('insert into  DISTTAB(gateid,dist) values (?,?)',
+					[request.form['gateid'],request.form['dist']])
 		db.commit()
 		flash('New distance has been seted ')
 		return redirect(url_for('show_legal'))
 	return render_template('setDistance.html')
+
 
 @app.route('/add',methods=['GET','POST'])
 def add_entry():

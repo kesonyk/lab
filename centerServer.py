@@ -41,8 +41,8 @@ class CenterRPC(object):
 		if not isTabExist('DISTTAB'):
 
 			conn.execute('''CREATE TABLE DISTTAB
-						( GATEID TEXT NOT NULL,
-						  DIST	 TEXT NOT NULL)''')
+						( gateid TEXT NOT NULL,
+						  dist	 TEXT NOT NULL)''')
 
 			print "Table created successfully"
 
@@ -69,8 +69,10 @@ class CenterRPC(object):
 			print type(row)
 			print row
 
-
+		conn.close()
 	def dataSelect(self,gateId):
+			
+		conn=sqlite3.connect('center.db')
 		sql="SELECT * from DATABASE WHERE GATEID="+"gateId"
 		print sql
 
@@ -79,34 +81,43 @@ class CenterRPC(object):
 		for row in cursor:
 			print row
 			ret.append(row)
+		conn.close()
 		return ret
 
 
 	def carConfirm(self,gateId,carId):
-
+		
+		conn=sqlite3.connect('center.db')
 		cursor=conn.execute("SELECT GATEID,CARSRC from PERMISSION")
+
 		for row in cursor:
 			print carId,row
 			if gateId==row[0] and carId==row[1]:
 				print "confirmed!"
+				conn.close()
 				return True
 			else:
 				print "not confirmed"
+				conn.close()
 				return False
 
 	def dataUpload(self,gateId,carId,data):
-
+		
+		conn=sqlite3.connect('center.db')
 		conn.execute("""INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
 			VALUES (?,?,?,1);""",(gateId,carMap[carId],data))
 		conn.commit()
-
+		conn.close()
 
 	def distInfo(self):
+		
+		conn=sqlite3.connect('center.db')
 		distMap={}
 		cursor=conn.execute("SELECT GATEID,DIST from DISTTAB")
 		for row in cursor:
 			print row
 			distMap[row[0]]=row[1]
+		conn.close()
 		return distMap;
 
 
