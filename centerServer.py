@@ -22,14 +22,14 @@ def isTabExist(tabName):
 class CenterRPC(object):
 
 	def __init__(self):
-		if not isTabExist('PERMISSION'):	
+		if not isTabExist('PERMISSION'):
 		#create the Permission Tab
 			conn.execute('''CREATE TABLE PERMISSION
 					( GATEID TEXT  NOT NULL,
 					  CARID  TEXT  NOT NULL,
 					  CARSRC   TEXT  NOT NULL)''')
 			print "Permission Table created successfully"
-		
+
 		if not isTabExist('DATABASE'):
 			conn.execute('''CREATE TABLE DATABASE
 						( GATEID TEXT  NOT NULL,
@@ -43,8 +43,8 @@ class CenterRPC(object):
 			conn.execute('''CREATE TABLE DISTTAB
 						( GATEID TEXT NOT NULL,
 						  DIST	 TEXT NOT NULL)''')
-		
-			print "Table created successfully"		
+
+			print "Table created successfully"
 
 
 		conn.execute("INSERT INTO PERMISSION (GATEID,CARID,CARSRC)\
@@ -53,7 +53,7 @@ class CenterRPC(object):
 
 		conn.execute("INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
 			VALUES ('01','fffffffffffffff1','',0)")
-		
+
 		conn.execute("INSERT INTO DISTTAB (GATEID,DIST)\
 			VALUES ('01','200')")
 
@@ -69,7 +69,7 @@ class CenterRPC(object):
 			print type(row)
 			print row
 
-	
+
 	def dataSelect(self,gateId):
 		sql="SELECT * from DATABASE WHERE GATEID="+"gateId"
 		print sql
@@ -80,10 +80,10 @@ class CenterRPC(object):
 			print row
 			ret.append(row)
 		return ret
-	
-	
+
+
 	def carConfirm(self,gateId,carId):
-		
+
 		cursor=conn.execute("SELECT GATEID,CARSRC from PERMISSION")
 		for row in cursor:
 			print carId,row
@@ -95,12 +95,12 @@ class CenterRPC(object):
 				return False
 
 	def dataUpload(self,gateId,carId,data):
-		
+
 		conn.execute("""INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
 			VALUES (?,?,?,1);""",(gateId,carMap[carId],data))
 		conn.commit()
 
-	
+
 	def distInfo(self):
 		distMap={}
 		cursor=conn.execute("SELECT GATEID,DIST from DISTTAB")
@@ -110,7 +110,7 @@ class CenterRPC(object):
 		return distMap;
 
 
-if(__name__=='__main__'):	
+if(__name__=='__main__'):
 	s=zerorpc.Server(CenterRPC())
 	s.bind("tcp://0.0.0.0:4242")
 	s.run()
@@ -120,7 +120,7 @@ if(__name__=='__main__'):
 
 
 
- 
+
 
 
 
