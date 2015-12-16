@@ -20,6 +20,7 @@ def isTabExist(tabName):
  RPC Server Operation
 """
 class CenterRPC(object):
+
 	def __init__(self):
 		if not isTabExist('PERMISSION'):
 		#create the Permission Tab
@@ -32,10 +33,6 @@ class CenterRPC(object):
 			VALUES ('01','001','fffffffffffffff1')")
 
 
-				
-
-	
-
 		if not isTabExist('DATABASE'):
 			conn.execute('''CREATE TABLE DATABASE
 						( GATEID TEXT  NOT NULL,
@@ -45,27 +42,29 @@ class CenterRPC(object):
 			print "Database Table created successfully"
 			conn.execute("INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
 			VALUES ('01','fffffffffffffff1','',0)")
-
-
+	
 	
 		if not isTabExist('DISTTAB'):
-
 			conn.execute('''CREATE TABLE DISTTAB
 						( GATEID TEXT NOT NULL,
 						  DIST	 TEXT NOT NULL)''')
-
 			print "Distance Table created successfully"
-
 			conn.execute("INSERT INTO DISTTAB (GATEID,DIST)\
-			VALUES ('01','200')")
+			VALUES ('01','300')")
+			conn.execute("INSERT INTO DISTTAB (GATEID,DIST)\
+			VALUES ('02','300')")
+			conn.execute("INSERT INTO DISTTAB (GATEID,DIST)\
+			VALUES ('03','300')")
+			conn.execute("INSERT INTO DISTTAB (GATEID,DIST)\
+			VALUES ('04','300')")
 
 
 
-
+		print "CarPermission Show:"
+		print "Gate   Car"
 		cursor=conn.execute("SELECT * from PERMISSION")
 		for row in cursor:
 			carMap[row[2]]=row[1]
-			print type(row)
 			print row
 
 		cursor=conn.execute("SELECT * from DATABASE")
@@ -80,6 +79,8 @@ class CenterRPC(object):
 		conn.commit()
 
 		conn.close()
+
+		
 
 	def dataSelect(self,gateId):
 			

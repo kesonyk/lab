@@ -2,19 +2,42 @@
 
 {% block page_content %}
 
-{% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
-  <form action="{{ url_for('set_dist') }}" method="post" class="form-signin">
-    <h1 class="form-signin-heading">设置各个门的通信距离</h1>
-    <h3 class="form-signin-heading">请设置门和距离</h3>
-    <dt>GateId
-    <label for="gateid" class="sr-only">GATEID</label>
-    <input type="text" name="gateid" class="form-control" placeholder="GateId" required autofocus>
-    <dt>Distance
-    <label for="dist" class="sr-only">Distance</label>
-    <input type="text" name="dist" class="form-control" placeholder="Distance" required>
-  </br>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-  </form>
-</div> <!-- /container -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>各门通信距离显示</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Gate</th>
+            <th>Distance</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for entry in entries %}
+          <tr>
+            <td>{{entry.GATEID}}</td>
+            <td>{{entry.DIST}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+        <form action="{{ url_for('set_dist') }}" method="post" class="form-signin">
+          <h1 class="form-signin-heading">设置各门通信距离</h1>
+          <!--<h3 class="form-signin-heading">请设置门和距离</h3>-->
+          <dt>GateId
+          <label for="gateid" class="sr-only">GATEID</label>
+          <input type="text" name="gateid" class="form-control" placeholder="GateId" required autofocus>
+          <dt>Distance
+          <label for="dist" class="sr-only">Distance</label>
+          <input type="text" name="dist" class="form-control" placeholder="Distance" required>
+        </br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
 
 {% endblock %}

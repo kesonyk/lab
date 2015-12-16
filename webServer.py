@@ -72,6 +72,7 @@ def index():
 	else:
 		return render_template('cover.html')
 
+
 @app.route('/home')
 def home():
 	return render_template('home.html')
@@ -109,6 +110,10 @@ def about():
 
 @app.route('/setDistance',methods=['GET','POST'])
 def set_dist():
+	db=get_db()
+	cur=db.execute('select GATEID,DIST from DISTTAB')
+	entries=cur.fetchall()
+
 	if request.method=='POST':
 		if not session.get('logged_in'):
 			abort(401)
@@ -121,18 +126,22 @@ def set_dist():
 	return render_template('setDistance.html')
 
 
-@app.route('/add',methods=['GET','POST'])
-def add_entry():
+@app.route('/add_permission',methods=['GET','POST'])
+def add_permission():
+	db=get_db()
+	cur=db.execute('select GATEID,CARID,CARSRC from PERMISSION')
+	entries=cur.fetchall()
+
 	if request.method=='POST':
 		if not session.get('logged_in'):
 			abort(401)
 		db=get_db()
-		db.execute('insert into DATABASE (GATEID,CARID,DATA,STATE) values (?,?,"",?)',
-					[request.form['GATEID'],request.form['CARID'],request.form['STATE']])
+		db.execute('insert into PERMISSION (GATEID,CARID,CARSRC) values (?,?,?)',
+					[request.form['GATEID'],request.form['CARID'],request.form['CARSRC']])
 		db.commit()
 		flash('New entry was successfully posted')
-		return redirect(url_for('show_legal'))
-	return render_template('add.html')
+		return redirect(url_for('home'))
+	return render_template('add_permission.html')
 
 
 if __name__=='__main__':

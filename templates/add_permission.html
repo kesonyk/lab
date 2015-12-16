@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+  <div class="row">
+    <div class="col-md-6">
+      <h3>各门合法车辆显示</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Gate</th>
+            <th>CarId</th>
+            <th>CarSrc</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for entry in entries %}
+          <tr>
+            <td>{{entry.GATEID}}</td>
+            <td>{{entry.CARID}}</td>
+            <td>{{entry.CARSRC}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="col-md-6">
+      {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+      <form action="{{ url_for('add_permission') }}" method="post" class="form-signin">
+        <h1 class="form-signin-heading">增加合法车辆编号</h1>
+        <h3 class="form-signin-heading">请输入门和车辆编号，车辆SRC</h3>
+        <dt>GateId
+        <label for="GATEID" class="sr-only">GATEID</label>
+        <input type="text" name="GATEID" class="form-control" placeholder="GateId" required autofocus>
+        <dt>CarId
+        <label for="CARID" class="sr-only">CARID</label>
+        <input type="text" name="CARID" class="form-control" placeholder="CarId" required>
+        <dt>CarSrc
+        <label for="STATE" class="sr-only">CARSRC</label>
+        <input type="text" name="CARSRC" class="form-control" placeholder="CarSrc" required>
+      </br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+
