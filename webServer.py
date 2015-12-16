@@ -113,7 +113,7 @@ def set_dist():
 		if not session.get('logged_in'):
 			abort(401)
 		db=get_db()
-		db.execute('insert into  DISTTAB(gateid,dist) values (?,?)',
+		db.execute('UPDATE DISTTAB SET GATEID=?,DIST=?',
 					[request.form['gateid'],request.form['dist']])
 		db.commit()
 		flash('New distance has been seted ')

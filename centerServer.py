@@ -41,8 +41,8 @@ class CenterRPC(object):
 		if not isTabExist('DISTTAB'):
 
 			conn.execute('''CREATE TABLE DISTTAB
-						( gateid TEXT NOT NULL,
-						  dist	 TEXT NOT NULL)''')
+						( GATEID TEXT NOT NULL,
+						  DIST	 TEXT NOT NULL)''')
 
 			print "Table created successfully"
 
@@ -85,14 +85,14 @@ class CenterRPC(object):
 		return ret
 
 
-	def carConfirm(self,gateId,carId):
+	def carConfirm(self,gateId,carSrc):
 		
 		conn=sqlite3.connect('center.db')
 		cursor=conn.execute("SELECT GATEID,CARSRC from PERMISSION")
 
 		for row in cursor:
 			print carId,row
-			if gateId==row[0] and carId==row[1]:
+			if gateId==row[0] and carSrc==row[1]:
 				print "confirmed!"
 				conn.close()
 				return True
