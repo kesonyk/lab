@@ -103,7 +103,7 @@ class CenterRPC(object):
 		cursor=conn.execute("SELECT GATEID,CARSRC from PERMISSION")
 	
 		for row in cursor:
-			print carId,row
+			#print carId,row
 			if gateId==row[0] and carSrc==row[1]:
 				print "confirmed!"
 				conn.close()
@@ -113,11 +113,11 @@ class CenterRPC(object):
 				conn.close()
 				return False
 
-	def dataUpload(self,gateId,carId,data):
+	def dataUpload(self,gateId,carSrc,data):
 		
 		conn=sqlite3.connect('center.db')
 		conn.execute("""INSERT INTO DATABASE (GATEID,CARID,DATA,STATE)\
-			VALUES (?,?,?,1);""",(gateId,carMap[carId],data))
+			VALUES (?,?,?,1);""",(gateId,carMap[carSrc],data))
 		conn.commit()
 		conn.close()
 
